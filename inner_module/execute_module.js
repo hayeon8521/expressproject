@@ -15,4 +15,3 @@ console.log(result2);
 //당장 필요한것만 가져오는거
 result = add(20,50); //함수
 console.log(result);
-console.log('abc');
