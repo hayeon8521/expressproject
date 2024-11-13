@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //전체 조회
+      fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.json())
+      .then(result => {
+         console.dir(result);
+      })
+      .catch(err=>console.log(err));
+
+      //단건조회 url에 값을 집어넣은거임
+      //?로 단건을 넘기진 않음 단건에대한 식별값을 이용해 값을 넘김
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(res => res.json())
+      .then(result => {
+         console.dir(result);
+      })
+      .catch(err=>console.log(err));
+
+      //삭제
+      fetch('https://jsonplaceholder.typicode.com/posts/1', {
+         method : 'DELETE'
+      })
+      .then(res => res.json())
+      .then(result => {
+         console.dir(result);
+      })
+      .catch(err=>console.log(err));
+   </script>
+</body>
+</html>
