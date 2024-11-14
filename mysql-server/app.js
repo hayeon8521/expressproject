@@ -36,14 +36,12 @@ app.post('/customers', async(req, res)=>{
 
 //수정
 app.put('/customers/:id', async(req, res)=>{
-   /*
    let array = [];
    let selected = req.params.id;
    let selectedbody = req.body;
-   array.put(selected,selectedbody);
+   array.push(selectedbody,selected);
    let list = await mysql.query('customerUpdate', array);
    res.send(list);
-   */
 });
 
 //삭제
