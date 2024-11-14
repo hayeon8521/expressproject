@@ -152,7 +152,8 @@ req.query => QuerySring
 1) application/x-www-form-urlencode
 => QuerySring(질의문자열) : key=vaule&key=value&...
 익스프레스에서
-=> req.query 로 가져오는것
+=> req.query 속성 : GET 으로 가져오는거
+=> req.body 속성  : POST 으로 가져오는것
 https://velog.io/@onady/HTTP-Content-Type <=참조하기
 */
 

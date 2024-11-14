@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- name="avatar" // name="photos" 키값을 이용 단건 여러건으로 처리 -->
+  <form action="http://localhost:5000/profile" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar">
+    <button type="submit">단건 등록</button>
+  </form>
+  <hr>
+  <!-- ★★ multiple  여러건 받으면 꼭 집어넣어야하고 -->
+   <!-- 한건 받을려면 꼭 빼야함 -->
+  <form action="http://localhost:5000/photos" method="post" enctype="multipart/form-data">
+    <input type="file" name="photos" multiple>
+    <button type="submit">여러건 등록</button>
+  </form>
+</body>
+</html>
