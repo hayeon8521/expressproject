@@ -1,7 +1,10 @@
 //app.js
+require('dotenv').config({ path : './database/mysql.env' });   //환경변수 모듈 선언
+console.log(process.env);  //환경변수에 내용 확인 전체확인
 const express = require('express');
 const app = express();
-const mysql = require('./mapper.js');  //맵퍼 사용하도록 호출
+const mysql = require('./database/mapper.js');  //맵퍼 사용하도록 호출
+
 
 // content-type : application/json
 app.use(express.json());
@@ -36,12 +39,19 @@ app.post('/customers', async(req, res)=>{
 
 //수정
 app.put('/customers/:id', async(req, res)=>{
+   /*
    let array = [];
    let selected = req.params.id;
    let selectedbody = req.body;
    array.push(selectedbody,selected);
    let list = await mysql.query('customerUpdate', array);
    res.send(list);
+   */
+    //교수님 정답
+    let selected = req.params.id;
+    let selectedbody = req.body;
+    let list = ( await mysql.query('customerUpdate', [selectedbody, selected]) );
+    res.send(list);
 });
 
 //삭제

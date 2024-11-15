@@ -36,11 +36,17 @@ app.get('/user/:user_no', async(req,res)=>{
 
  //수정
 app.put('/user/:user_no', async(req, res)=>{
+    /*
     let userarray = [];
     let selected = req.params.user_no;
     let selectedbody = req.body;
     userarray.push(selectedbody, selected);
-    let list = await mysql.query('userUpdate', userarray);
+    let list = ( await mysql.query('userUpdate', userarray) );
+    */
+    //교수님 정답
+    let selected = req.params.user_no;
+    let selectedbody = req.body;
+    let list = ( await mysql.query('userUpdate', [selectedbody, selected]) );
     res.send(list);
 });
 
