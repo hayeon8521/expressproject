@@ -5,6 +5,7 @@ import DataBinding from '@/views/DataBinding.vue';
 import ListBinding from '@/views/ListBinding.vue';
 import IfBinding from '@/views/IfBinding.vue';
 import OnEvent from '@/views/OnEvent.vue';
+import ComputedWatch from '@/views/ComputedWatch.vue';
 //@ <== src 절대 경로 표현 .. <== 상대경로 표현
 //3가지 정보 입력하면됨 ( 경로, 이름, 컴포넌트번수)
 //경로로도 불러올수있고 이름으로 불러올수도 있음 (경로가 긴경우 이름으로 불러오면 좋아서)
@@ -42,6 +43,11 @@ const routes = [
     path : '/onEvent',
     name : 'onEvent',
     component : OnEvent
+  },
+  {
+    path : '/comWatch',
+    name : 'comWatch',
+    component : ComputedWatch
   }
 ]
 

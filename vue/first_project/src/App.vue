@@ -6,7 +6,8 @@
     <router-link to="/dataBinding">DataBinding</router-link> |  <!--경로호출로 바인딩-->
     <router-link v-bind:to="{ name : 'listBind'}">ListBinding</router-link> | <!--네임호출로 바인딩-->
     <router-link :to="{ path : '/IfBinding'}">IfBinding</router-link> | <!--경로호출로 바인딩 v-bind 생략가능-->
-    <router-link to="/onEvent">OnEvent</router-link> <!--경로호출로 바인딩-->
+    <router-link to="/onEvent">OnEvent</router-link> | <!--경로호출로 바인딩-->
+    <router-link to="/comWatch">computedWatch</router-link> <!--경로호출로 바인딩-->
   </nav>
   <h1> h1태그가 모든페이지에 출력됨 하이퍼 링크와 무관하게 동작</h1>
   <router-view/>  <!--이게 화면 전체를 덮어쓰는거-->
