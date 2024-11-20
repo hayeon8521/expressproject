@@ -1,30 +1,42 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <!-- header component -->
+    <DefaultHeader/>
+    <!-- 헤더를 DefaultHeader.vue 로 뺏음 해더구성하려고
+    <router-link to="/customerList">전체조회</router-link> | 
+    <router-link to="/customerAdd">등록</router-link>
+    -->
+    <!-- content component -->
+    <router-view/>
+    <!--<CustomerInfo/>-->
+    <!-- footer component -->
+     <!-- 푸터도 이런식으로 작업하기 -->
+  </div>
 </template>
 
+<script>
+import DefaultHeader from './layouts/DefaultHeader.vue';
+export default {
+  components : {
+    DefaultHeader,
+  }
+};
+
+
+
+/*
+import CustomerList from './views/CustomerList.vue';
+import CustomerInfo from './views/CustomerInfo.vue';
+
+export default {
+  components : {
+    CustomerList,
+    CustomerInfo,
+  }
+}
+*/
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
