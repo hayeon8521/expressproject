@@ -63,7 +63,6 @@ export default {
          // 원래 주소는 이거 이고 생략되는거임 http://localhost:8081/api/customers
          let result = await axios.get('/api/customers')
                            .catch(err => console.log(err));
-
          //가져온 정보를 여기서 가공해서 리스트에 넣어줌
          this.customerList = result.data;
       },
