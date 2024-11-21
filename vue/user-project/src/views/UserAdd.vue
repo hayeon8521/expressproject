@@ -61,12 +61,11 @@ export default{
    methods : {
       async addUserInfo(){
          //모든 값을 입력했을때 라는 전제조건으로 진행
-         let result = await axios.post(`/api/users`, this.userInfo)
+         let result = await axios.post(`/api/boards`, this.userInfo)
                                  .catch(err=>console.log(err));
-         //console.log(result.data);
-         if(result.data.user_no > 0){
+         if(result.data.no > 0){
             alert('등록되었습니다.');
-            this.$router.push({ name : 'userInfo', query : { no : result.data.user_no }});
+            this.$router.push({ name : 'userInfo', query : { no : result.data.no }});
          }else{
             alert('등록되지 않았습니다.');
          }
